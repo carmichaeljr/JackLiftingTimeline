@@ -23,5 +23,5 @@ highlighter: rouge
 lsi: false
 description: My lifting career.
 baseurl: "/JackLiftingTimeline"
-url: https://carmichaeljr.github.io/JackLiftingTimeline/
+url: https://carmichaeljr.github.io/JackLiftingTimeline
 color: "#f2f2f2"
