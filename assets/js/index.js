@@ -62,16 +62,34 @@ var chart = JSC.chart('chartDiv',{
   },
   series: [
     {
+      shape: {
+         label: [
+         { text: '%name'  },
+         { text: '%sum / 600'}
+       ]
+      },
       name: 'Squat',
       yAxis: 'Squat',
       points: [  [ 'value', 365  ]]
     },
     {
+      shape: {
+         label: [
+         { text: '%name'  },
+         { text: '%sum / 405'}
+       ]
+      },
       name: 'Bench',
       yAxis: 'Bench',
       points: [  [ 'value', 260  ]]
     },
     {
+      shape: {
+         label: [
+         { text: '%name'  },
+         { text: '%sum / 800'}
+       ]
+      },
       name: 'Deadlift',
       yAxis: 'Deadlift',
       points: [  [ 'value', 425  ]]
