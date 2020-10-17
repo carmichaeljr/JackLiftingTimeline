@@ -1,0 +1,12 @@
+<div class="item">
+  <i class="vertical-line"></i>
+  <h2 class="item-date"><script>document.write(Math.round(Date.now() / (365 * 24 * 60 * 60 * 1000) + 1970 - 1));</script></h2>
+  <div class="card-panel">
+      <h3 class="card-title">
+          Current Stats
+      </h3>
+      <p>
+          TODO
+      </p>
+  </div>
+</div>
