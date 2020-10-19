@@ -35,3 +35,6 @@ deadliftGoal: 800
 squatGoal: 700
 benchGoal: 405
 totalGoal: 1905
+
+absMaxWilks: 500
+wilksMax: 378.95
