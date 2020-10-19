@@ -23,19 +23,19 @@ var chart = JSC.chart('chartDiv',{
       id: 'Squat',
       line_visible: true,
       defaultTick_enabled: false,
-      scale_range: [  0,  600]
+      scale_range: [  0,  {{ site.squatGoal }}]
     },
     {
       id: 'Bench',
       line_visible: true,
       defaultTick_enabled: false,
-      scale_range: [  0,  405]
+      scale_range: [  0,  {{ site.benchGoal }}]
     },
     {
       id: 'Deadlift',
       line_visible: true,
       defaultTick_enabled: false,
-      scale_range: [  0,  800]
+      scale_range: [  0,  {{ site.deadliftGoal }}]
     }
   ],
   xAxis: [
@@ -66,34 +66,34 @@ var chart = JSC.chart('chartDiv',{
       shape: {
          label: [
          { text: '%name'  },
-         { text: '%sum / 600'}
+         { text: '%sum lbs/ {{ site.squatGoal }} lbs'}
        ]
       },
       name: 'Squat',
       yAxis: 'Squat',
-      points: [  [ 'value', 365  ]]
+      points: [  [ 'value', {{ site.squatMax }}  ]]
     },
     {
       shape: {
          label: [
          { text: '%name'  },
-         { text: '%sum / 405'}
+         { text: '%sum lbs/ {{ site.benchGoal }} lbs'}
        ]
       },
       name: 'Bench',
       yAxis: 'Bench',
-      points: [  [ 'value', 260  ]]
+      points: [  [ 'value', {{ site.benchMax }}  ]]
     },
     {
       shape: {
          label: [
          { text: '%name'  },
-         { text: '%sum / 800'}
+         { text: '%sum lbs/ {{ site.deadliftGoal }} lbs'}
        ]
       },
       name: 'Deadlift',
       yAxis: 'Deadlift',
-      points: [  [ 'value', 425  ]]
+      points: [  [ 'value', {{ site.deadliftMax }}  ]]
     },
   ]
 });
