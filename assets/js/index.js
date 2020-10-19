@@ -185,8 +185,8 @@ JSC.Grid("gridDiv", {
   columns: [
     { header: "Product", value: "%0" },
     { header: "Units Sold", value: "%1", align: "right" },
-    { header: "Revenue", value: "{%2:c}", align: "right" },
-    { header: "Unit Price", value: "{%2/%1:c}", align: "right" }
+    { header: "Revenue", value: "{ %2:c}", align: "right" },
+    { header: "Unit Price", value: "{ %2/%1:c}", align: "right" }
   ]
 }).then(function(g) {
   grid = g;
