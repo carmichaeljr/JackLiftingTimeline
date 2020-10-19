@@ -100,6 +100,12 @@ var chart = JSC.chart('chartDiv',{
       defaultTick_enabled: false,
       scale_range: [  0,  {{ site.totalGoal }}]
     },
+    {
+      id: 'wilks',
+      line_visible: true,
+      defaultTick_enabled: false,
+      scale_range: [  0,  {{ site.absMaxWilks }}]
+    },
   ],
   xAxis: [
     {
@@ -109,7 +115,7 @@ var chart = JSC.chart('chartDiv',{
   ],
   defaultSeries: {
     type: 'gauge linear column roundCaps',
-    color: '#00eb37',
+    color: '#ffae00',
     shape: {label: [  { text: '%name'  }] },
   },
   series: [
@@ -131,20 +137,38 @@ var chart = JSC.chart('chartDiv',{
     {
         name: 'Total',
         type: 'gauge column roundCaps',
-        color: '#00eb37',
+        color: '#ffae00',
         shape: {
             innerSize: '70%',
             label: [
                 { text: '%name'  },
                 {
-                    text: '%sum lbs/ 1905 lbs',
+                    text: '%sum lbs/ {{ site.totalGoal }} lbs',
                     verticalAlign: 'middle',
                     style_fontSize: 20
                 }
             ]
         },
         yAxis: 'total',
-        points: [[ 'value', 1030  ]]
-      }
+        points: [[ 'value', {{ site.totalMax }} ]]
+    },
+    {
+        name: 'Wilks',
+        type: 'gauge column roundCaps',
+        color: '#ffae00',
+        shape: {
+            innerSize: '70%',
+            label: [
+                { text: '%name'  },
+                {
+                    text: '%sum / {{ site.absMaxWilks }}',
+                    verticalAlign: 'middle',
+                    style_fontSize: 20
+                }
+            ]
+        },
+        yAxis: 'wilks',
+        points: [[ 'value', {{ site.wilksMax }}  ]]
+    }
   ]
 });
