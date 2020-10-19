@@ -172,3 +172,22 @@ var chart = JSC.chart('chartDiv',{
     }
   ]
 });
+
+var grid,
+  data = [
+    ["Product", "Units Sold", "Revenue"],
+    ["Hammer", 152, 1518.48],
+    ["Saw", 1355, 27086.45],
+    ["Nail Gun", 3355, 201266.45]
+  ];
+JSC.Grid("gridDiv", {
+  data: data.slice(1),
+  columns: [
+    { header: "Product", value: "%0" },
+    { header: "Units Sold", value: "%1", align: "right" },
+    { header: "Revenue", value: "{%2:c}", align: "right" },
+    { header: "Unit Price", value: "{%2/%1:c}", align: "right" }
+  ]
+}).then(function(g) {
+  grid = g;
+});
