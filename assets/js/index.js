@@ -1,3 +1,5 @@
+---
+---
 /*JSC.Chart('chartDiv', {
    type: 'column',
    series: [
