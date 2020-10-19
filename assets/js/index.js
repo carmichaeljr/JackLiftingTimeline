@@ -1,20 +1,6 @@
 ---
 ---
-/*JSC.Chart('chartDiv', {
-   type: 'column',
-   series: [
-      {
-         points: [
-            {x: 'Squat', y: 365},
-            {x: 'Bench', y: 240},
-            {x: 'Deadlift', y: 425}
-         ]
-      }
-   ]
-});
-*/
-
-var chart = JSC.chart('chartDiv',{
+/*var chart = JSC.chart('chartDiv',{
   title: {
     label_text: 'Current Lifts',
     position: 'center'
@@ -43,8 +29,6 @@ var chart = JSC.chart('chartDiv',{
   xAxis: [
     {
       defaultTick_gridLine_width: 0,
-      
-/*Reduces column size to pad against axis line.*/
       spacingPercentage: 0.15
     }
   ],
@@ -97,5 +81,46 @@ var chart = JSC.chart('chartDiv',{
       yAxis: 'Deadlift',
       points: [  [ 'value', {{ site.deadliftMax }}  ]]
     },
+  ]
+});*/
+
+var chart = JSC.chart('chartDiv',{
+  debug: true,
+  title: {
+    label_text: 'Linear Column Guides',
+    position: 'center'
+  },
+  legend_visible: false,
+  yAxis: [
+    {id: 'bench', line_visible: true, scale_range: [  0,  {{ site.benchGoal }} ] },
+    {id: 'squat', line_visible: true, scale_range: [  0,  {{ side.squatGoal }} ] },
+    {id: 'deadlift', line_visible: true, scale_range: [  0,  {{ site.deadliftGoal }} ] },
+  ],
+  xAxis: [
+    {
+      defaultTick_gridLine_width: 0,
+      spacingPercentage: 0.15
+    }
+  ],
+  defaultSeries: {
+    type: 'gauge linear column roundCaps',
+    shape: {label: [  { text: '%name'  }] },
+  },
+  series: [
+    {
+      name: 'Squat',
+      yAxis: 'squat',
+      points: [  [ 'value', {{ site.squatMax }} ]]
+    },
+     {
+      name: 'Bench',
+      yAxis: 'bench',
+      points: [  [ 'value', {{ site.benchMax }} ]]
+    },
+     {
+      name: 'Deadlift',
+      yAxis: 'deadlift',
+      points: [  [ 'value', {{ site.deadliftMax }} ]]
+    }
   ]
 });
