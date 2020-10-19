@@ -185,7 +185,7 @@ var grid,
         (1030/1905*100).toString().substring(0,4)+"%",
         (0).toString().substring(0,4)+"%"],
   ];
-JSC.Grid("grid", {
+JSC.Grid("gridDiv", {
   data: data.slice(1),
   columns: [
     { header: "", value: "%0" },
