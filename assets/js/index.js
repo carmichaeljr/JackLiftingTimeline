@@ -143,6 +143,7 @@ var chart = JSC.chart('chartDiv',{
                 }
             ]
         },
+        yAxis: 'total',
         points: [[ 'value', 1030  ]]
       }
   ]
