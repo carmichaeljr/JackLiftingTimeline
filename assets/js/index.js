@@ -129,21 +129,21 @@ var chart = JSC.chart('chartDiv',{
       points: [  [ 'value', {{ site.deadliftMax }} ]]
     },
     {
-      type: 'gauge column roundCaps',
-      color: '#00eb37',
-      shape: {
-      innerSize: '70%',
-      label: [
-        { text: '%name'  },
-        {
-          text: '%sum lbs/ {{site.totalGoal}} lbs',
-          verticalAlign: 'middle',
-          style_fontSize: 20
-        }
-      ],
-      name: 'Total',
-      yAxis: 'total',
-      points: [  [ 'value', {{ site.totalMax }}  ]]
-    }
+        name: 'Total',
+        type: 'gauge column roundCaps',
+        color: '#00eb37',
+        shape: {
+            innerSize: '70%',
+            label: [
+                { text: '%name'  },
+                {
+                    text: '%sum lbs/ 1905 lbs',
+                    verticalAlign: 'middle',
+                    style_fontSize: 20
+                }
+            ]
+        },
+        points: [[ 'value', 1030  ]]
+      }
   ]
 });
