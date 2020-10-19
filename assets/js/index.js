@@ -85,16 +85,21 @@
 });*/
 
 var chart = JSC.chart('chartDiv',{
-  debug: true,
   title: {
-    label_text: 'Linear Column Guides',
+    label_text: 'SBD Maxes',
     position: 'center'
   },
   legend_visible: false,
   yAxis: [
     {id: 'bench', line_visible: true, scale_range: [  0,  {{ site.benchGoal }} ] },
-    {id: 'squat', line_visible: true, scale_range: [  0,  {{ side.squatGoal }} ] },
+    {id: 'squat', line_visible: true, scale_range: [  0,  {{ site.squatGoal }} ] },
     {id: 'deadlift', line_visible: true, scale_range: [  0,  {{ site.deadliftGoal }} ] },
+    {
+      id: 'total',
+      line_visible: true,
+      defaultTick_enabled: false,
+      scale_range: [  0,  {{ site.totalGoal }}]
+    },
   ],
   xAxis: [
     {
@@ -104,6 +109,7 @@ var chart = JSC.chart('chartDiv',{
   ],
   defaultSeries: {
     type: 'gauge linear column roundCaps',
+    color: '#00eb37',
     shape: {label: [  { text: '%name'  }] },
   },
   series: [
@@ -121,6 +127,23 @@ var chart = JSC.chart('chartDiv',{
       name: 'Deadlift',
       yAxis: 'deadlift',
       points: [  [ 'value', {{ site.deadliftMax }} ]]
+    },
+    {
+      type: 'gauge column roundCaps',
+      color: '#00eb37',
+      shape: {
+      innerSize: '70%',
+      label: [
+        { text: '%name'  },
+        {
+          text: '%sum lbs/ {{site.totalGoal}} lbs',
+          verticalAlign: 'middle',
+          style_fontSize: 20
+        }
+      ],
+      name: 'Total',
+      yAxis: 'total',
+      points: [  [ 'value', {{ site.totalMax }}  ]]
     }
   ]
 });
