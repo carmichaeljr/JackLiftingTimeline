@@ -175,18 +175,17 @@ var chart = JSC.chart('chartDiv',{
 
 var grid,
   data = [
-    ["Product", "Units Sold", "Revenue"],
-    ["Hammer", 152, 1518.48],
-    ["Saw", 1355, 27086.45],
-    ["Nail Gun", 3355, 201266.45]
+    ["", "Squat", "Bench", "Deadlift", "Total", "Wilks"],
+    ["Current Weights", {{ site.squatMax }}, {{ site.benchMax }}, {{ site.deadliftMax }}, {{ site.wilksMax }}],
+    ["Goal Weights", {{ site.squatGoal }}, {{ site.benchGoal }}, {{ site.deadliftGoal }}, "" ],
   ];
 JSC.Grid("gridDiv", {
   data: data.slice(1),
   columns: [
-    { header: "Product", value: "%0" },
-    { header: "Units Sold", value: "%1", align: "right" },
-    { header: "Revenue", value: "{ %2:c}", align: "right" },
-    { header: "Unit Price", value: "{ %2/%1:c}", align: "right" }
+    { header: "", value: "%0" },
+    { header: "Current Weights", value: "%1", align: "right" },
+    { header: "Goal Weights", value: "%2", align: "right" },
+    { header: "Percentage achieved", value: "{ %1/%2:c}", align: "right" }
   ]
 }).then(function(g) {
   grid = g;
