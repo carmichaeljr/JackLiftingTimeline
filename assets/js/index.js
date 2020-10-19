@@ -174,19 +174,27 @@ var chart = JSC.chart('chartDiv',{
 });
 
 var grid,
-  data = [
-    ["", "Squat", "Bench", "Deadlift", "Total", "Wilks"],
-    ["Current Weights", {{ site.squatMax }}, {{ site.benchMax }}, {{ site.deadliftMax }}, {{ site.wilksMax }}],
-    ["Goal Weights", {{ site.squatGoal }}, {{ site.benchGoal }}, {{ site.deadliftGoal }}, "" ],
-  ];
-JSC.Grid("gridDiv", {
-  data: data.slice(1),
-  columns: [
-    { header: "", value: "%0" },
-    { header: "Current Weights", value: "%1", align: "right" },
-    { header: "Goal Weights", value: "%2", align: "right" },
-    { header: "Percentage achieved", value: "{ %1/%2:c}", align: "right" }
-  ]
+  data = [
+      ["","Squat", "Bench","Deadlift","Total","Wilks"],
+      ["Current Weight",365,405,425,1030,0],
+      ["Goal Weight",700,405,800,1905,0],
+      ["Percentages",
+        (365/700*100).toString().substring(0,4)+"%",
+        (240/405*100).toString().substring(0,4)+"%",
+        (425/800*100).toString().substring(0,4)+"%",
+        (1030/1905*100).toString().substring(0,4)+"%",
+        (0).toString().substring(0,4)+"%"],
+  ];
+JSC.Grid("grid", {
+  data: data.slice(1),
+  columns: [
+    { header: "", value: "%0" },
+    { header: "Squat", value: "%1", align: "right" },
+    { header: "Bench", value: "%2", align: "right" },
+    { header: "Deadlift", value: "%3", align: "right" },
+    { header: "Total", value: "%4", align: "right" },
+    { header: "Wilks", value: "%5", align: "right" },
+  ]
 }).then(function(g) {
-  grid = g;
+  grid = g;
 });
