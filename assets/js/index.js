@@ -48,6 +48,7 @@ var chart = JSC.chart('chartDiv',{
   ],
   defaultSeries: {
     type: 'gauge column roundCaps',
+    color: '#00eb37',
     shape: {
       innerSize: '70%',
       label: [
