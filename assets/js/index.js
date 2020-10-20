@@ -175,18 +175,20 @@ var chart = JSC.chart('chartDiv',{
 
 var grid,
   data = [
-      ["","Squat", "Bench","Deadlift","Total","Wilks"],
-      ["Current Weight",365,405,425,1030,0],
-      ["Goal Weight",700,405,800,1905,0],
-      ["Percentages",
-        (365/700*100).toString().substring(0,4)+"%",
-        (240/405*100).toString().substring(0,4)+"%",
-        (425/800*100).toString().substring(0,4)+"%",
-        (1030/1905*100).toString().substring(0,4)+"%",
-        (0).toString().substring(0,4)+"%"],
+      ["Category","Squat", "Bench","Deadlift","Total","Wilks"],
+      ["Current Weight",{{ site.squatMax }},{{ site.benchMax }},{{ site.deadliftMax }},{{ site.totalMax }},{{ site.wilksMax }}],
+      ["Goal Weight",{{ site.squatGoal }},{{ site.benchGoal }},{{ site.deadliftGoal }},{{ site.totalGoal }},{{ site.absMaxWilks }}],
+      ["Percent of Goal",
+        ({{ site.squatMax }}/{{ site.squatGoal }}*100).toString().substring(0,4)+"%",
+        ({{ site.benchMax }}/{{ site.benchGoal }}*100).toString().substring(0,4)+"%",
+        ({{ site.deadliftMax }}/{{ site.deadliftGoal }}*100).toString().substring(0,4)+"%",
+        ({{ site.totalMax }}/{{ site.totalGoal }}*100).toString().substring(0,4)+"%",
+        ({{ site.wilksMax }}/{{ site.absMaxWilks }}).toString().substring(0,4)+"%"
+      ],
   ];
 JSC.Grid("gridDiv", {
   data: data.slice(1),
+  //cssFile: 
   columns: [
     { header: "", value: "%0" },
     { header: "Squat", value: "%1", align: "right" },
