@@ -190,7 +190,7 @@ JSC.Grid("gridDiv", {
   data: data.slice(1),
   //cssFile: 
   columns: [
-    { header: "", value: "%0" },
+    { header: "Categories", value: "%0" },
     { header: "Squat", value: "%1", align: "right" },
     { header: "Bench", value: "%2", align: "right" },
     { header: "Deadlift", value: "%3", align: "right" },
@@ -201,7 +201,7 @@ JSC.Grid("gridDiv", {
   grid = g;
 });
 
-function openCity(evt, cityName) {
+function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -209,9 +209,9 @@ function openCity(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].tabName = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
