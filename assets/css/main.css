@@ -82,7 +82,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
-  color: white;
+  color: black;
   display: none;
   padding: 100px 20px;
   height: 100%;
