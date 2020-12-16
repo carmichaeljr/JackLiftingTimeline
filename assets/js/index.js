@@ -84,10 +84,10 @@
   ]
 });*/
 
-var chart;
+var SBDChart;
 
-function createChart(){
-  chart = JSC.chart('chartDiv',{
+function createSBDChart(){
+  SBDChart = JSC.chart('SBDChartDiv',{
     title: {
       label_text: 'SBD Maxes',
       position: 'center'
@@ -217,7 +217,9 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
-  createChart();
+  if (tabName==="Stats"){
+    createSBDChart();
+  }
 }
 
 // Get the element with id="defaultOpen" and click on it
