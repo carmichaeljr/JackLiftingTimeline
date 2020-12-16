@@ -85,6 +85,7 @@
 });*/
 
 var SBDChart;
+var deadliftChart;
 
 function createSBDChart(){
   SBDChart = JSC.chart('SBDChartDiv',{
@@ -177,6 +178,48 @@ function createSBDChart(){
   });  
 }
 
+function createDeadliftChart(){
+  deadliftChart = JSC.chart("deadliftChart", {
+  type: "lineSpline",
+  yAxis_label_text: "Weight (lbs)",
+  legend_position:'bottom right',
+  xAxis_scale_type: "time",
+  series: [
+    {
+      name: "Deadlift",
+      color: '#ffae00',
+      line_width: 3,
+      defaultPoint_marker: {
+        size: 12,
+        outline: { width: 3, color: "white" }
+      },
+      points: [
+        { x: "1/24/2019", y: 275 },
+        { x: "2/6/2019", y: 285 },
+        { x: "3/22/2019", y: 295 },
+        { x: "3/28/2019", y: 300 },
+        { x: "4/18/2019", y: 315 },
+        { x: "4/21/2019", y: 320 },
+        { x: "7/5/2019", y: 325 },
+        { x: "10/5/2019", y: 335 },
+        { x: "10/12/2019", y: 345 },
+        { x: "10/26/2019", y: 365 },
+        { x: "12/5/2019", y: 405 },
+        { x: "6/29/2020", y: 335 },
+        { x: "8/24/2020", y: 345 },
+        { x: "8/31/2020", y: 365 },
+        { x: "9/7/2020", y: 385 },
+        { x: "9/16/2020", y: 405 },
+        { x: "9/28/2020", y: 425 },
+        { x: "12/1/2020", y: 455 },
+        { x: "12/4/2020", y: 465 }
+      ]
+    }
+  ]
+});
+
+}
+
 var grid,
   data = [
       ["Category","Squat", "Bench","Deadlift","Total","Wilks"],
@@ -219,6 +262,7 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
   if (tabName==="Stats"){
     createSBDChart();
+    createDeadliftChart();
   }
 }
 
