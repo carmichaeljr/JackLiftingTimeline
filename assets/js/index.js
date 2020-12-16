@@ -183,7 +183,7 @@ var grid,
         ({{ site.benchMax }}/{{ site.benchGoal }}*100).toString().substring(0,4)+"%",
         ({{ site.deadliftMax }}/{{ site.deadliftGoal }}*100).toString().substring(0,4)+"%",
         ({{ site.totalMax }}/{{ site.totalGoal }}*100).toString().substring(0,4)+"%",
-        ({{ site.wilksMax }}/{{ site.absMaxWilks }}).toString().substring(0,4)+"%"
+        ({{ site.wilksMax }}/{{ site.absMaxWilks }}*100).toString().substring(0,4)+"%"
       ],
   ];
 JSC.Grid("gridDiv", {
