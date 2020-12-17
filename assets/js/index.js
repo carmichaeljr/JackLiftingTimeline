@@ -1,6 +1,7 @@
 ---
 ---
-/*var chart = JSC.chart('chartDiv',{
+/*
+var chart = JSC.chart('chartDiv',{
   title: {
     label_text: 'Current Lifts',
     position: 'center'
@@ -82,7 +83,8 @@
       points: [  [ 'value', {{ site.deadliftMax }}  ]]
     },
   ]
-});*/
+});
+*/
 
 var SBDChart;
 var deadliftChart;
