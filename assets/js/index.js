@@ -121,7 +121,7 @@ function createSBDChart(){
     ],
     defaultSeries: {
       type: 'gauge linear column roundCaps',
-      color: '#ffae00',
+      color: {{ site.accentColor }},
       shape: {label: [  { text: '%name'  }] },
     },
     series: [
@@ -143,7 +143,7 @@ function createSBDChart(){
       {
           name: 'Total',
           type: 'gauge column roundCaps',
-          color: '#ffae00',
+          color: {{ site.accentColor }},
           shape: {
               innerSize: '70%',
               label: [
@@ -161,7 +161,7 @@ function createSBDChart(){
       {
           name: 'Wilks',
           type: 'gauge column roundCaps',
-          color: '#ffae00',
+          color: {{ site.accentColor }},
           shape: {
               innerSize: '70%',
               label: [
@@ -189,7 +189,7 @@ function createDeadliftChart(){
     series: [
       {
         name: "Deadlift",
-        color: '#ffae00',
+        color: {{ site.accentColor }},
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
@@ -230,7 +230,7 @@ function createBenchChart(){
     series: [
       {
         name: "Bench",
-        color: '#ffae00',
+        color: {{ site.accentColor }},
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
@@ -260,7 +260,7 @@ function createSquatChart(){
     series: [
       {
         name: "Squat",
-        color: '#ffae00',
+        color: {{ site.accentColor }},
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
