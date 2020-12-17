@@ -186,6 +186,7 @@ function createTimeChart(){
     yAxis_label_text: "Weight (lbs)",
     legend_position:'bottom right',
     xAxis_scale_type: "time",
+    defaultSeries_firstPoint: { label_text: "%seriesName" },
     series: [
       {
         name: "Deadlift",
@@ -216,9 +217,7 @@ function createTimeChart(){
           { x: "12/1/2020", y: 455 },
           { x: "12/4/2020", y: 465 }
         ]
-      }
-    ],
-    series: [
+      },
       {
         name: "Bench",
         color: ' {{ site.accentColor }} ',
@@ -237,9 +236,7 @@ function createTimeChart(){
           { x: "8/21/2020", y: 240 },
           { x: "12/1/2020", y: 245 }
         ]
-      }
-    ],
-    series: [
+      },
       {
         name: "Squat",
         color: ' {{ site.accentColor }} ',
@@ -264,7 +261,11 @@ function createTimeChart(){
           { x: "11/13/2020", y: 385 }
         ]
       }
-    ]
+    ],
+    xAxis: {
+      crosshair_enabled: true,
+      scale_type: "time"
+    }
   });
 }
 
