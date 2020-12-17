@@ -87,9 +87,7 @@ var chart = JSC.chart('chartDiv',{
 */
 
 var SBDChart;
-var deadliftChart;
-var benchChart;
-var squatChart;
+var timeChart
 
 function createSBDChart(){
   SBDChart = JSC.chart('SBDChartDiv',{
@@ -182,8 +180,8 @@ function createSBDChart(){
   });  
 }
 
-function createDeadliftChart(){
-  deadliftChart = JSC.chart("deadliftChart", {
+function createTimeChart(){
+  timeChart = JSC.chart("timeChart", {
     type: "lineSpline",
     yAxis_label_text: "Weight (lbs)",
     legend_position:'bottom right',
@@ -219,10 +217,58 @@ function createDeadliftChart(){
           { x: "12/4/2020", y: 465 }
         ]
       }
+    ],
+    series: [
+      {
+        name: "Bench",
+        color: ' {{ site.accentColor }} ',
+        line_width: 3,
+        defaultPoint_marker: {
+          size: 12,
+          outline: { width: 3, color: "white" }
+        },
+        points: [
+          { x: "8/5/2019", y: 225 },
+          { x: "7/10/2020", y: 195 },
+          { x: "7/17/2020", y: 200 },
+          { x: "7/28/2020", y: 205 },
+          { x: "8/4/2020", y: 225 },
+          { x: "8/11/2020", y: 230 },
+          { x: "8/21/2020", y: 240 },
+          { x: "12/1/2020", y: 245 }
+        ]
+      }
+    ],
+    series: [
+      {
+        name: "Squat",
+        color: ' {{ site.accentColor }} ',
+        line_width: 3,
+        defaultPoint_marker: {
+          size: 12,
+          outline: { width: 3, color: "white" }
+        },
+        points: [
+          { x: "2/14/2019", y: 205 },
+          { x: "3/28/2019", y: 210 },
+          { x: "7/5/2019", y: 275 },
+          { x: "7/9/2019", y: 315 },
+          { x: "7/8/2020", y: 225 },
+          { x: "7/15/2020", y: 250 },
+          { x: "7/22/2020", y: 275 },
+          { x: "7/29/2020", y: 280 },
+          { x: "8/5/2020", y: 315 },
+          { x: "8/26/2020", y: 325 },
+          { x: "9/2/2020", y: 340 },
+          { x: "9/14/2020", y: 365 },
+          { x: "11/13/2020", y: 385 }
+        ]
+      }
     ]
   });
 }
 
+/*
 function createBenchChart(){
   benchChart = JSC.chart("benchChart", {
     type: "lineSpline",
@@ -287,7 +333,7 @@ function createSquatChart(){
     ]
   });
 }
-
+*/
 var grid,
   data = [
       ["Category","Squat", "Bench","Deadlift","Total","Wilks"],
@@ -330,9 +376,12 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
   if (tabName==="Stats"){
     createSBDChart();
+    createTimeChart();
+    /*
     createDeadliftChart();
     createBenchChart();
     createSquatChart();
+    */
   }
 }
 
