@@ -128,16 +128,19 @@ function createSBDChart(){
       {
         name: 'Squat',
         yAxis: 'squat',
+        color: ' {{ site.squatAccentColor }} ',
         points: [  [ 'value', {{ site.squatMax }} ]]
       },
        {
         name: 'Bench',
         yAxis: 'bench',
+        color: ' {{ site.benchAccentColor }} ',
         points: [  [ 'value', {{ site.benchMax }} ]]
       },
        {
         name: 'Deadlift',
         yAxis: 'deadlift',
+        color: ' {{ site.deadliftAccentColor }} ',
         points: [  [ 'value', {{ site.deadliftMax }} ]]
       },
       {
@@ -190,7 +193,7 @@ function createTimeChart(){
     series: [
       {
         name: "Deadlift",
-        color: ' {{ site.accentColor }} ',
+        color: ' {{ site.deadliftAccentColor }} ',
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
@@ -220,7 +223,7 @@ function createTimeChart(){
       },
       {
         name: "Bench",
-        color: ' {{ site.accentColor }} ',
+        color: ' {{ site.benchAccentColor }} ',
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
@@ -239,7 +242,7 @@ function createTimeChart(){
       },
       {
         name: "Squat",
-        color: ' {{ site.accentColor }} ',
+        color: ' {{ site.squatAccentColor }} ',
         line_width: 3,
         defaultPoint_marker: {
           size: 12,
