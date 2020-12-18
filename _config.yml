@@ -26,7 +26,11 @@ baseurl: "/JackLiftingTimeline"
 url: https://carmichaeljr.github.io/JackLiftingTimeline
 color: "#f2f2f2"
 
+deadliftAccentColor: "#2ad121"
+squatAccentColor: "#21b1d1"
+benchAccentColor: "#21b1d1"
 accentColor: "#ffae00"
+
 deadliftMax: 465
 squatMax: 385
 benchMax: 245
