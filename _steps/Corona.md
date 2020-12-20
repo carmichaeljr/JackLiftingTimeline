@@ -1,11 +1,12 @@
 ---
 title: Coronacation
-date: 2019-03-01 00:00:00 -0700
+date: 2020-03-01 00:00:00 -0700
 ---
 
 NOTE: Video is pending.
 
 Alternate title: THE GYMS ARE CLOSED
+
 Alternate title two: FUCK
 
 Ok, so the gyms are closed and I am sitting at home doing homework slowly losing my mind. I need to do something.
