@@ -95,6 +95,8 @@ var deadliftPoints=JSC.fetch( "{{ "/data/DeadliftRecords.json" | prepend: site.b
     //Use JSON to populate the chart.
 });
 
+console.log(deadliftPoints);
+
 function createSBDChart(){
   SBDChart = JSC.chart('SBDChartDiv',{
     title: {
