@@ -89,6 +89,12 @@ var chart = JSC.chart('chartDiv',{
 var SBDChart;
 var timeChart
 
+var deadliftPoints=JSC.fetch( "{{ "/data/DeadliftRecords.json" | prepend: site.baseurl }}")
+  .then(response => response.json())
+  .then(json => {
+    //Use JSON to populate the chart.
+});
+
 function createSBDChart(){
   SBDChart = JSC.chart('SBDChartDiv',{
     title: {
@@ -199,7 +205,9 @@ function createTimeChart(){
           size: 12,
           outline: { width: 3, color: "white" }
         },
-        points: [
+        points: deadliftPoints,
+        
+        /*[
           { x: "1/24/2019", y: 275 },
           { x: "2/6/2019", y: 285 },
           { x: "3/22/2019", y: 295 },
@@ -219,7 +227,7 @@ function createTimeChart(){
           { x: "9/28/2020", y: 425 },
           { x: "12/1/2020", y: 455 },
           { x: "12/4/2020", y: 465 }
-        ]
+        ]*/
       },
       {
         name: "Bench",
