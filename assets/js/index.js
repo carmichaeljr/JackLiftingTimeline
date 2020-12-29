@@ -106,7 +106,6 @@ JSC.fetch("{{ "/data/Records.csv" | prepend: site.baseurl }}")
 
 function csvToSeries(text) {
   let dataAsJson = JSC.csv2Json(text);
-  console.log(dataAsJson)
   dataAsJson.forEach(function (row) {
     if (row.lift==="Squat"){
       squatPoints.push({x: row.date, y: row.weight});
