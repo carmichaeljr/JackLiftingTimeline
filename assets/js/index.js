@@ -88,26 +88,35 @@ var chart = JSC.chart('chartDiv',{
 
 var SBDChart;
 var timeChart;
-var deadliftPoints;
+var squatPoints=[];
+var benchPoints=[];
+var deadliftPoints=[];
 
-JSC.fetch("{{ "/data/DeadliftRecords.json" | prepend: site.baseurl }}")
+JSC.fetch("{{ "/data/Records.csv" | prepend: site.baseurl }}")
  .then(function (response) {
     return response.text();
  })
  .then(function (text) {
-    jsonToSeries(text);
+    csvToSeries(text);
  })
  .catch(function (error) {
     //Something went wrong
     console.log(error);
  });
 
-function jsonToSeries(text) {
-   console.log(text);
-  deadliftPoints=text;
+function csvToSeries(text) {
+  let dataAsJson = JSC.csv2Json(text);
+  console.log(dataAsJson)
+  dataAsJson.forEach(function (row) {
+    if (row.lift==="Squat"){
+      squatPoints.push({row.date,row.weight});
+    } else if (row.lift=="Bench"){
+      benchPoints.push({row.date,row.weight});
+    } else if (row.lift=="Deadlift"){
+      deadliftPoints.push({row.date,row.weight});
+    }
+	});
 }
-
-console.log(deadliftPoints);
 
 function createSBDChart(){
   SBDChart = JSC.chart('SBDChartDiv',{
