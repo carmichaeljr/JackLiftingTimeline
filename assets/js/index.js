@@ -87,13 +87,25 @@ var chart = JSC.chart('chartDiv',{
 */
 
 var SBDChart;
-var timeChart
+var timeChart;
+var deadliftPoints;
 
-var deadliftPoints=JSC.fetch( "{{ "/data/DeadliftRecords.json" | prepend: site.baseurl }}")
-  .then(response => response.json())
-  .then(json => {
-    //Use JSON to populate the chart.
-});
+JSC.fetch("{{ "/data/DeadliftRecords.json" | prepend: site.baseurl }}")
+ .then(function (response) {
+    return response.text();
+ })
+ .then(function (text) {
+    jsonToSeries(text);
+ })
+ .catch(function (error) {
+    //Something went wrong
+    console.log(error);
+ });
+
+function jsonToSeries(text) {
+   console.log(text);
+  deadliftPoints=text;
+}
 
 console.log(deadliftPoints);
 
