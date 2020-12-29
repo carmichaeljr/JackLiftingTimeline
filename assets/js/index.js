@@ -260,7 +260,9 @@ function createTimeChart(){
           size: 12,
           outline: { width: 3, color: "white" }
         },
-        points: [
+        points: benchPoints,
+        
+        /*[
           { x: "8/5/2019", y: 225 },
           { x: "7/10/2020", y: 195 },
           { x: "7/17/2020", y: 200 },
@@ -269,7 +271,7 @@ function createTimeChart(){
           { x: "8/11/2020", y: 230 },
           { x: "8/21/2020", y: 240 },
           { x: "12/1/2020", y: 245 }
-        ]
+        ]*/
       },
       {
         name: "Squat",
@@ -279,7 +281,8 @@ function createTimeChart(){
           size: 12,
           outline: { width: 3, color: "white" }
         },
-        points: [
+        points: squatPoints,
+        /*[
           { x: "2/14/2019", y: 205 },
           { x: "3/28/2019", y: 210 },
           { x: "7/5/2019", y: 275 },
@@ -293,7 +296,7 @@ function createTimeChart(){
           { x: "9/2/2020", y: 340 },
           { x: "9/14/2020", y: 365 },
           { x: "11/13/2020", y: 385 }
-        ]
+        ]*/
       }
     ],
     xAxis: {
