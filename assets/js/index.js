@@ -109,13 +109,13 @@ function csvToSeries(text) {
   console.log(dataAsJson)
   dataAsJson.forEach(function (row) {
     if (row.lift==="Squat"){
-      squatPoints.push({row.date,row.weight});
+      squatPoints.push({x: row.date, y: row.weight});
     } else if (row.lift=="Bench"){
-      benchPoints.push({row.date,row.weight});
+      benchPoints.push({x: row.date, y: row.weight});
     } else if (row.lift=="Deadlift"){
-      deadliftPoints.push({row.date,row.weight});
+      deadliftPoints.push({x: row.date,y: row.weight});
     }
-	});
+  });
 }
 
 function createSBDChart(){
