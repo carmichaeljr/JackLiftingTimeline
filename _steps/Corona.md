@@ -3,7 +3,7 @@ title: Coronacation
 date: 2020-03-01 00:00:00 -0700
 ---
 
-NOTE: Video is pending.
+{% include YouTubeVideo.html videoID="Ril7trX_nCk" %}
 
 Alternate title: THE GYMS ARE CLOSED
 
