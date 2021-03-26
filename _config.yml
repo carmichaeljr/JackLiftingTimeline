@@ -31,10 +31,10 @@ squatAccentColor: "#21b1d1"
 benchAccentColor: "#d12121"
 accentColor: "#ffae00"
 
-deadliftMax: 465
-squatMax: 385
-benchMax: 245
-totalMax: 1095
+deadliftMax: 500
+squatMax: 425
+benchMax: 275
+totalMax: 1200
 
 deadliftGoal: 800
 squatGoal: 700
@@ -42,4 +42,4 @@ benchGoal: 405
 totalGoal: 1905
 
 absMaxWilks: 500
-wilksMax: 402.86
+wilksMax: 417.00
