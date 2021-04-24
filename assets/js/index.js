@@ -307,7 +307,7 @@ function openTab(evt, tabName) {
 document.getElementById("defaultOpen").click();
 
 
-toggle between hiding and showing the dropdown content */
+/*toggle between hiding and showing the dropdown content */
 function userSelect() {
   document.getElementById("userDropdown").classList.toggle("show");
 }
